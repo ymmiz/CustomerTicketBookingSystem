@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Schedule {
     private Movie  movie;
-    private Threatre threatre;
+    private Theatre theatre;
     private TimeZone timezone;
     private List<Ticket> tickets = new ArrayList<Ticket>();
 }

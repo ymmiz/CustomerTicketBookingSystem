@@ -21,31 +21,30 @@ public class CinemaTest {
         System.out.println("5: Exit");
     }
     public static void main(String[] args)throws Exception {
-        customerAction();
         boolean exit = true;
-        while(exit){
-        int choice = Integer.parseInt(br.readLine());
-        switch (choice) {
-            case 1:
-                findCustomer();
-                break;
-            case 2:
-                getAllCustomer();
-                break;
-            case 3:
-                registerCustomer();
-                break;
-            case 4:
-                destoryCustomer();
-                break;
-            case 5:
-                exit = false;
-                System.out.println("Exiting the application..");
-                break;
+        do {
+            customerAction();
+            int choice = Integer.parseInt(br.readLine());
+            switch (choice) {
+                case 1:
+                    findCustomer();
+                    break;
+                case 2:
+                    getAllCustomer();
+                    break;
+                case 3:
+                    registerCustomer();
+                    break;
+                case 4:
+                    destoryCustomer();
+                    break;
+                case 5:
+                    exit = false;
+                    System.out.println("Exiting the application..");
+                    break;
             }
-        }while(exit);
+        } while (exit);
     }
-
     private static void destoryCustomer() throws IOException, SQLException {
         System.out.println("Enter Customer ID:");
         int id = Integer.parseInt(br.readLine());
@@ -53,7 +52,6 @@ public class CinemaTest {
         customer.setId(id);
         customerDao.delete(customer);
     }
-
     private static void registerCustomer() throws IOException, SQLException {
         System.out.println("Enter customer name:");
         String name = br.readLine();
